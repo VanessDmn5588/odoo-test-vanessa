@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Bootstrap Card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card custom-card">
+            <div class="card-header">
+                <ul class="nav nav-tabs" id="cardTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab">Tab 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab">Tab 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab">Tab 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" id="tab4-tab" href="#" role="tab" aria-disabled="true">Disabled</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="card-body tab-content">
+                <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                    <h5>Card Title</h5>
+                    <p>Card Subtitle</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group" id="imageList">
+                                <li class="list-group-item" data-img="img1">An item</li>
+                                <li class="list-group-item" data-img="img2">A second item</li>
+                                <li class="list-group-item" data-img="img3">A third item</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <img id="displayImage" src="./img/logo-odoo.png" class="img-fluid" alt="Image" style="margin-top:-50px">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab2" role="tabpanel">
+                    <div class="text-center">
+                        <svg width="50" height="50" viewBox="0 0 50 50" class="loading-svg">
+                            <circle cx="25" cy="25" r="20" stroke="#000" stroke-width="5" fill="none"></circle>
+                        </svg>
+                        <p>Loading...</p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab3" role="tabpanel">
+                    <p>Static content here.</p>
+                </div>
+            </div>
+            <div class="card-footer text-muted">Static Footer</div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('#imageList .list-group-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.getElementById('displayImage').src = `https://via.placeholder.com/150?text=${this.textContent}`;
+            });
+        });
+    </script>
+</body>
+</html>

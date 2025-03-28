@@ -1,0 +1,37 @@
+// Variables pour les couleurs et tailles
+$card-width: 600px;
+$rotation-speed: 2s;
+
+// Styles de la carte
+.custom-card {
+    max-width: $card-width;
+    margin: auto;
+}
+
+// Animation de rotation
+.loading-svg {
+    animation: rotate $rotation-speed linear infinite;
+}
+
+.custom-card {
+    max-width: 600px;
+    width: 100%; // S'assurer qu'il ne dépasse pas 600px
+    margin: auto;
+}
+
+
+// Définition de l'animation
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+// Responsive pour mobile
+@media (max-width: 768px) {
+    .custom-card {
+        max-width: 100%;
+    }
+    .row {
+        flex-direction: column;
+    }
+}

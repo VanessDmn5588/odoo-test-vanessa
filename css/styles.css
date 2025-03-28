@@ -1,0 +1,33 @@
+.custom-card {
+  max-width: 600px;
+  margin: auto;
+}
+
+.loading-svg {
+  animation: rotate 2s linear infinite;
+}
+
+.custom-card {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 768px) {
+  .custom-card {
+    max-width: 100%;
+  }
+  .row {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
